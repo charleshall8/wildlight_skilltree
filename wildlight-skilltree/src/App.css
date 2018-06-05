@@ -1,0 +1,325 @@
+.skilltree {
+  background: #333;
+  max-width: 800px;
+  display: grid;
+  margin: 70px auto;
+  box-shadow: 0 4px 0px #333;
+  border-radius: 10px;
+  grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  grid-template-areas:
+  "header"
+  "add-skill"
+  "main";
+}
+.App-header {
+  grid-area: header;
+  display: grid;
+  background-color: #222;
+  padding: 20px;
+  color: white;
+  grid-template-rows: 125px 50px;
+  grid-template-columns: 300px 460px;
+  grid-template-areas:
+  "applogo skilldetails"
+  "tierlevels addremoveskill"
+  "addskillform addskillform";
+}
+
+@media (max-width: 768px){
+  .App-header{
+      display: flex;
+      flex-direction: column;
+  }
+  .skilltree
+  {
+  margin: 20px auto;
+  }
+}
+
+.App-logo {
+  grid-area: applogo;
+  height: 100px;
+  float: left;
+  margin-right: 40px;
+}
+
+
+.skill-details{
+  grid-area: skilldetails;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+}
+
+.skill-title-row  {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.skill-title-row img {
+ transform: scale(2.0);
+ image-rendering: pixelated;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+.skill-title-row h1 {
+  margin: 0px;
+    margin-top: 10px;
+      overflow: hidden;
+}
+
+.skill-details p {
+    margin-top: 0px;
+    overflow: hidden;
+}
+.skill-details h3 {
+    margin-top: 10px;
+      margin-bottom: 5px;
+}
+
+.tier-levels {
+  grid-area: tierlevels;
+}
+.active-tierbutton{
+  color: blue;
+}
+
+.App-title {
+  font-size: 1.3em;
+  float:left;
+  margin-right:5px;
+
+}
+.tierbutton {
+  font-size: 1.0em;
+
+}
+.active-tierbutton {
+  font-size: 1.0em;
+  background: #4b71b5;
+  color: #fafafa;
+}
+.addremove-skill {
+  grid-area: addremoveskill;
+}
+
+.add-skill-form {
+  grid-area: addskillform;
+
+}
+
+.add-skill-form form{
+  display: flex;
+  background-color: #1C1C1C;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+  .add-skill-form input[type=text] {
+    border-width: 0 0 1px 0;
+    margin: 15px 10px 15px 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #333;
+    border-style: none;
+    text-shadow: none;
+    text-transform: uppercase;
+    color: #FAFAFA;
+    letter-spacing: 2px;
+    outline: none;
+
+  }
+  .name-input{
+    flex: 1 30%;
+  }
+  .description-input{
+        flex:1 100%;
+  }
+
+  .add-skill-form textarea  {
+    border-width: 0 0 1px 0;
+    margin: 15px 10px 15px 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #333;
+    border-style: none;
+    text-shadow: none;
+    text-transform: uppercase;
+    color: #FAFAFA;
+    letter-spacing: 2px;
+    outline: none;
+  }
+
+  .add-skill-form select {
+    flex-grow: 1;
+    border-width: 0 0 1px 0;
+    margin: 15px 10px 15px 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #333;
+    border-style: none;
+    text-shadow: none;
+    text-transform: uppercase;
+    color: #FAFAFA;
+    letter-spacing: 2px;
+    outline: none;
+  }
+
+  .add-skill-form input[type=text]::-webkit-input-placeholder{
+    color: #666;
+    letter-spacing: 2px;
+  }
+
+  .add-skill-form input[type=text]:focus{
+    background-color: #444;
+  }
+
+  .add-skill-form input[type=submit] {
+    display: block;
+    margin: 15px 15px 15px 0;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    border: none;
+    color: #FAFAFA;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: none;
+    text-transform: uppercase;
+  }
+
+  .add-skill-form input[type=submit]:hover{
+    background: #4b71b5;
+    color: #fafafa;
+    .row{
+      content: "";
+    display: table;
+    clear: both;
+    text-align: left;
+
+    }
+
+    cursor: pointer;
+  }
+
+  .invalidated-submit{
+    visibility: hidden;
+  }
+
+
+.main{
+  grid-area:main;
+}
+
+.row{
+  content: "";
+display: table;
+clear: both;
+text-align: left;
+
+
+}
+.column{
+  float: left;
+width: 266px;
+min-height: 1px;
+}
+
+
+
+
+body {
+  background: #d5d5d5;
+  font-family:Courier New, monospace;
+  font-weight: bold;
+  color: #FAFAFA;
+  text-transform: uppercase;
+
+}
+
+
+.skill {
+  display: flex;
+  font-size: 1.2em;
+  border-bottom: solid 2px #444;
+  letter-spacing: 2px;
+  cursor: pointer;
+  width: 227px;
+  padding: 10px 20px 5px 20px;
+  transition: background 0.5s;
+
+}
+
+.active-skill-survival {
+  background: #229954;
+  color: #fafafa;
+}
+.active-skill-combat {
+  background: #DC7633;
+  color: #fafafa;
+}
+.active-skill-magic {
+  background: #4b71b5;
+  color: #fafafa;
+}
+
+.skill-survival:hover {
+  background: #229954;
+  color: #fafafa;
+  cursor: pointer;
+}
+.skill-combat:hover {
+  background: #DC7633;
+  color: #fafafa;
+  cursor: pointer;
+}
+.skill-magic:hover {
+  background: #4b71b5;
+  color: #fafafa;
+  cursor: pointer;
+}
+
+.active-skill p {
+    overflow: hidden;
+    margin: 0;
+}
+.skill p {
+    overflow: hidden;
+    margin: 0;
+}
+.icon {
+  position: relative;
+  right: 5px;
+
+}
+
+
+
+button {
+  margin: 8px 5px;
+  background-color: #222;
+  border-radius: 5px;
+  padding: 7px 8px;
+  border: none;
+  color: #999;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-shadow: none;
+  text-transform: uppercase;
+  transition-duration: 0.25s;
+  transition-property: background;
+}
+button:hover {
+  background: #4b71b5;
+  color: #fafafa;
+  cursor: pointer;
+}
+button:active{
+    background: #4B8CB5;
+}
