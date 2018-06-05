@@ -212,7 +212,7 @@ skills : [
   ],
   selectedSkillIndex: -1,
   showAddSkillVal: false,
-  lastSkillId: 13,
+  lastSkillId: 35,
   tierFilter: '1'
 }
 
